@@ -2,7 +2,7 @@
 
 namespace UnravelerCS.Data
 {
-    class PageInfo
+    public class PageInfo
     {
         public string Filename { get; set; }
 

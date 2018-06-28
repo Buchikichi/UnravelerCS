@@ -33,7 +33,11 @@
             this.UnravelButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
             this.FileListBox = new System.Windows.Forms.ListBox();
+            this.PreviewPictureBox = new UnravelerCS.Behavior.CustomPictureBox();
+            this.PageTrackBar = new System.Windows.Forms.TrackBar();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PreviewPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PageTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -49,8 +53,7 @@
             // StatusLabel
             // 
             this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(118, 17);
-            this.StatusLabel.Text = "toolStripStatusLabel1";
+            this.StatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
             // UnravelButton
             // 
@@ -87,8 +90,34 @@
             this.FileListBox.ScrollAlwaysVisible = true;
             this.FileListBox.Size = new System.Drawing.Size(250, 508);
             this.FileListBox.TabIndex = 2;
+            this.FileListBox.SelectedIndexChanged += new System.EventHandler(this.FileListBox_SelectedIndexChanged);
             this.FileListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.FileListBox_DragDrop);
             this.FileListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.FileListBox_DragEnter);
+            // 
+            // PreviewPictureBox
+            // 
+            this.PreviewPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PreviewPictureBox.Location = new System.Drawing.Point(268, 12);
+            this.PreviewPictureBox.Name = "PreviewPictureBox";
+            this.PreviewPictureBox.Size = new System.Drawing.Size(504, 486);
+            this.PreviewPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PreviewPictureBox.TabIndex = 3;
+            this.PreviewPictureBox.TabStop = false;
+            // 
+            // PageTrackBar
+            // 
+            this.PageTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PageTrackBar.AutoSize = false;
+            this.PageTrackBar.Location = new System.Drawing.Point(269, 505);
+            this.PageTrackBar.Name = "PageTrackBar";
+            this.PageTrackBar.Size = new System.Drawing.Size(291, 31);
+            this.PageTrackBar.TabIndex = 4;
+            this.PageTrackBar.TabStop = false;
+            this.PageTrackBar.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.PageTrackBar.Scroll += new System.EventHandler(this.PageTrackBar_Scroll);
             // 
             // MainForm
             // 
@@ -97,10 +126,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseButton;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.PreviewPictureBox);
             this.Controls.Add(this.FileListBox);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.UnravelButton);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.PageTrackBar);
             this.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.MinimumSize = new System.Drawing.Size(800, 600);
@@ -109,6 +140,8 @@
             this.Text = "MainForm";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PreviewPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PageTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,6 +154,8 @@
         private System.Windows.Forms.Button UnravelButton;
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.ListBox FileListBox;
+        private Behavior.CustomPictureBox PreviewPictureBox;
+        private System.Windows.Forms.TrackBar PageTrackBar;
     }
 }
 
